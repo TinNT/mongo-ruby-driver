@@ -40,9 +40,11 @@ Gem::Specification.new do |s|
 
   # For testing driver against bson master we need to depend on bson < 6.0.0
   # but in release version we want to depend on bson < 5.0.0.
-  if %w(1 yes true).include?(ENV['MONGO_RUBY_DRIVER_BSON_MASTER'])
-    s.add_dependency 'bson', '>=4.13.0', '<6.0.0'
-  else
-    s.add_dependency 'bson', '>=4.14.1', '<5.0.0'
-  end
+  # if %w(1 yes true).include?(ENV['MONGO_RUBY_DRIVER_BSON_MASTER'])
+  #   s.add_dependency 'bson', '>=4.13.0', '<6.0.0'
+  # else
+  #   s.add_dependency 'bson', '>=4.14.1', '<5.0.0'
+  # end
+  
+  s.add_dependency 'bson', '~> 3.0'
 end
